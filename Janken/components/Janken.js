@@ -3,6 +3,7 @@ import { StyleSheet, SafeAreaView, Text, View, Animated } from "react-native";
 import Constants from "expo-constants";
 import DisplayText from "./DisplayText";
 import Actions from "./Actions";
+import colors from "../config/colors";
 
 export default function Janken() {
   const [userChoice, setUserChoice] = useState(0);
@@ -89,4 +90,35 @@ export default function Janken() {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: Constants.statusBarHeight,
+  },
+  content: {
+    flex: 1,
+    marginBottom: 5,
+    backgroundColor: colors.content,
+  },
+  result: {
+    height: 100,
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  resultText: {
+    fontSize: 48,
+    fontWeight: "bold",
+  },
+  screen: {
+    flex: 1,
+    flexDirection: "row",
+  },
+  readyText: {
+    marginTop: -48,
+    alignSelf: "center",
+    textAlign: "center",
+    width: "100%",
+    fontSize: 48,
+    fontWeight: "bold",
+  },
+});
