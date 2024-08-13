@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import { StyleSheet, SafeAreaView, Text, View, Animated } from "react-native";
 import Constants from "expo-constants";
-import DisplayText from "./DisplayText";
 import Actions from "./Actions";
 import colors from "../config/colors";
+import DisplayResult from "./DisplayResult";
 
 export default function Janken() {
   const [userChoice, setUserChoice] = useState(0);
@@ -78,7 +78,7 @@ export default function Janken() {
           {!result ? (
             <Text style={styles.readyText}>Let's Play</Text>
           ) : (
-            <DisplayText
+            <DisplayResult
               userChoice={userChoice}
               computerChoice={computerChoice}
             />
