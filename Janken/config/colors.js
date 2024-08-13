@@ -5,4 +5,5 @@ export default {
   handScissors: "#6a5300",
   actionButton: "#f9d835",
   playerName: "#373737",
+  appBarHeader: "#acaeb0",
 };

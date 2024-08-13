@@ -4,6 +4,7 @@ import Constants from "expo-constants";
 import Actions from "./Actions";
 import colors from "../config/colors";
 import DisplayResult from "./DisplayResult";
+import Header from "./Header";
 
 export default function Janken() {
   const [userChoice, setUserChoice] = useState(0);
@@ -66,6 +67,7 @@ export default function Janken() {
   // Return the view
   return (
     <SafeAreaView style={styles.container}>
+      <Header />
       <View style={styles.content}>
         <View style={styles.result}>
           <Animated.Text
