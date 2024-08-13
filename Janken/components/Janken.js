@@ -33,6 +33,31 @@ export default function Janken() {
 
     setUserChoice(choice);
     setComputerChoice(randomComputerChoice);
+
+    // Wait animation hide old result
+    setTimeout(() => {
+      setResult(resultString);
+    }, 300);
+
+    // Animation to hide old result and show new result
+    Animated.sequence([
+      Animated.timing(fadeAnimation, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: true,
+      }),
+      Animated.timing(fadeAnimation, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }),
+    ]).start();
+
+    // Disable action when animation running
+    setPlay(false);
+    setTimeout(() => {
+      setPlay(true);
+    }, 600);
   }
 }
 
