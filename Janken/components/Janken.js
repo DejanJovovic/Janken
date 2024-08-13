@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import { StyleSheet, SafeAreaView, Text, View, Animated } from "react-native";
 import Constants from "expo-constants";
+import DisplayText from "./DisplayText";
+import Actions from "./Actions";
 
 export default function Janken() {
   const [userChoice, setUserChoice] = useState(0);
@@ -59,6 +61,32 @@ export default function Janken() {
       setPlay(true);
     }, 600);
   }
+
+  // Return the view
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.content}>
+        <View style={styles.result}>
+          <Animated.Text
+            style={[styles.resultText, { opacity: fadeAnimation }]}
+          >
+            {result}
+          </Animated.Text>
+        </View>
+        <View style={styles.screen}>
+          {!result ? (
+            <Text style={styles.readyText}>Let's Play</Text>
+          ) : (
+            <DisplayText
+              userChoice={userChoice}
+              computerChoice={computerChoice}
+            />
+          )}
+        </View>
+        <Actions play={play} canPlay={canPlay} />
+      </View>
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({});
