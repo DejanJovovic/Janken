@@ -35,6 +35,30 @@ const DisplayResult = ({ userChoice, computerChoice }) => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  column: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  playerName: {
+    color: colors.playerName,
+    marginTop: 16,
+    fontSize: 16,
+  },
+  leftIcon: {
+    transform: [{ rotateZ: "80def" }],
+  },
+  scissorsLeftIcon: {
+    transform: [{ rotateZ: "180deg" }, { rotateX: "180deg" }],
+  },
+  rightIcon: {
+    transform: [
+      { rotateZ: "180deg" },
+      { rotateY: "180deg" },
+      { rotateX: "180deg" },
+    ],
+  },
+});
 
 export default DisplayResult;
