@@ -1,12 +1,43 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { FontAwesome5 } from "@expo/vector-icons";
+import colors from "../config/colors";
 
-const Actions = () => {
+const Actions = ({ play, canPlay }) => {
   return (
-    <View>
-      <Text>Actions</Text>
+    <View style={styles.actions}>
+      <TouchableOpacity // Rock
+        disabled={!canPlay}
+        style={styles.actionButton}
+        onPress={() => play(1)}
+      >
+        <FontAwesome5 name={"hand-rock"} size={32} color={colors.handRock} />
+      </TouchableOpacity>
+
+      <TouchableOpacity // Paper
+        disabled={!canPlay}
+        style={styles.actionButton}
+        onPress={() => play(2)}
+      >
+        <FontAwesome5 name="hand-paper" size={32} color={colors.handPaper} />
+      </TouchableOpacity>
+
+      <TouchableOpacity // Scissors
+        disabled={!canPlay}
+        style={styles.actionButton}
+        onPress={() => play(3)}
+      >
+        <FontAwesome5
+          name="hand-scissors"
+          size={32}
+          color={colors.handScissors}
+          style={{ transform: [{ rotate: "67deg" }] }}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
+
+const styles = StyleSheet.create({});
 
 export default Actions;
