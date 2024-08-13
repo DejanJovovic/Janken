@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   leftIcon: {
-    transform: [{ rotateZ: "80def" }],
+    transform: [{ rotateZ: "80deg" }],
   },
   scissorsLeftIcon: {
     transform: [{ rotateZ: "180deg" }, { rotateX: "180deg" }],
