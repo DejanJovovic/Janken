@@ -38,6 +38,21 @@ const Actions = ({ play, canPlay }) => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  actions: {
+    height: 100,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+  actionButton: {
+    width: 64,
+    height: 64,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.actionButton,
+    borderRadius: 32,
+  },
+});
 
 export default Actions;
